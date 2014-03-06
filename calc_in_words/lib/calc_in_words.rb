@@ -1,16 +1,21 @@
 def calculate(problem)
-  operators = {"plus" => :+ }
+  operators = {"plus" => :+, "minus" => :-, "multiplied" => :*, "divided" => :/, "times" => :* }
 
   words = problem.split(" ")
   numbers = problem.scan(/\d+/)
-  found_words = []
-  total = 0
+  found_ops = []
+  big_array = []
 
   words.each do |word|
-    found_words << operators[word]
-    found_words.compact!
+    found_ops << operators[word]
+    found_ops.compact!
+  end
+  
+  while numbers.length > 0 do
+    big_array << numbers.shift.to_f
+    big_array << found_ops.shift
   end
 
-  total = eval("#{numbers[0]} #{found_words[0]} #{numbers[1]}")
-  total
+  result = big_array.join(" ")
+  eval(result)
 end
