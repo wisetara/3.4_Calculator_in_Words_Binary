@@ -20,4 +20,7 @@ describe('calculate') do
   it('should take a float as an input') do
     calculate("What is 4.8 divided by 2").should(eq(2.4))    
   end
+  it('should recognize and calculate powers') do 
+    calculate("What is 4 to the power of 3").should(eq(64))
+  end
 end
