@@ -11,7 +11,7 @@ def calculate(problem)
     found_ops.compact!
   end
   nums = nums.flatten.collect { |i| i.to_f }
-  
+
   while nums.length > 0 do
     big_array << nums.shift
     big_array << found_ops.shift
@@ -28,4 +28,13 @@ end
 #    end
 #    eval(result) 
 #   else  
+#JOSH FOWLER'S CODE
 
+# require 'mathn'
+# def calc(input_string)
+#   sym_hash = {'plus' => '+', 'minus' => '-', 'times' => '*', 'divided by' => '/', 'to the' => '**'}
+
+#   sym_hash.each { |key, value| input_string.gsub!(key, value) }
+#   input_string.gsub!(/[a-zA-Z?]/, '')
+#   eval(input_string).to_f
+# end
