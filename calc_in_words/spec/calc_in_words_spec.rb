@@ -16,5 +16,8 @@ describe('calculate') do
   end 
   it('should return floats') do
     calculate("What is 5 divided by 2?").should(eq(2.5))
-    end     
+    end 
+  it('should take a float as an input') do
+    calculate("What is 4.8 divided by 2").should(eq(2.4))    
+  end
 end
